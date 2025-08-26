@@ -12,7 +12,7 @@ const Staking = () => {
   const [isStaking, setIsStaking] = useState(true);
   const [amount, setAmount] = useState("");
   const { address: connectedAddress } = useAccount();
-  const { writeContractAsync: writeYourContractAsync, isMining } = useScaffoldWriteContract({ contractName: "StakingLST" });
+  const { writeContractAsync: writeYourContractAsync } = useScaffoldWriteContract({ contractName: "StakingLST" });
 
   const handleStake = async () => {
     if (!connectedAddress || !amount) return;
