@@ -11,7 +11,7 @@ const CTA = () => {
         </p>
         <a
           href="https://stake.monbux.xyz"
-          className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 mx-auto"
+          className="bg-white max-w-60 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 mx-auto"
         >
           Start Staking Now <ArrowRightIcon className="w-5 h-5" />
         </a>

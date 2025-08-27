@@ -79,11 +79,11 @@ const MonInput = ({
           src={
             isStaking
               ? isInput
-                ? "/monad-logo.png"
-                : "/monbux-logo.png"
+                ? "https://monbux.xyz/monad-logo.png"
+                : "https://monbux.xyz/monbux-logo.png"
               : isInput
-                ? "/monbux-logo.png"
-                : "/monad-logo.png"
+                ? "https://monbux.xyz/monbux-logo.png"
+                : "https://monbux.xyz/monad-logo.png"
           }
           alt="Mon"
           width={24}

@@ -7,10 +7,10 @@ import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { notification } from "~~/utils/scaffold-eth";
 
 const menus = [
-  { name: "Home", href: "https://monbux.xyz", live: true },
   { name: "Stake", href: "https://stake.monbux.xyz", live: true },
   { name: "Swap", href: "#swap", live: false },
   { name: "Point", href: "#point", live: false },
+  { name: "Documentation", href: "https://docs.monbux.xyx", live: false },
   { name: "Faucet", href: "https://faucet.monad.xyz/", live: true },
 ];
 
@@ -39,7 +39,7 @@ const AppHeader = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <a href="https://monbux.xyz" className="flex items-center gap-1">
-            <Image src="/monbux-logo.png" alt="Monbux Logo" width={40} height={40} />
+            <Image src="https://monbux.xyz/monbux-logo.png" alt="Monbux Logo" width={40} height={40} />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Monbux
             </span>

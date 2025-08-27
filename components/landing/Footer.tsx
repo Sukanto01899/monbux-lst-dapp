@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -18,16 +19,16 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Links</h3>
             <div className="space-y-2">
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
+              <Link href="/terms" className="block text-gray-400 hover:text-white transition-colors">
                 Terms
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
+              </Link>
+              <Link href="/privacy-policy" className="block text-gray-400 hover:text-white transition-colors">
                 Privacy
-              </a>
+              </Link>
               <a href="#" className="block text-gray-400 hover:text-white transition-colors">
                 GitHub
               </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
+              <a href="https://docs.monbux.xyz/" className="block text-gray-400 hover:text-white transition-colors">
                 Docs
               </a>
             </div>
@@ -39,7 +40,7 @@ const Footer = () => {
               <a href="#" className="block text-gray-400 hover:text-white transition-colors">
                 Telegram
               </a>
-              <a href="#" className="block text-gray-400 hover:text-white transition-colors">
+              <a href="https://x.com/monbux_xyz" className="block text-gray-400 hover:text-white transition-colors">
                 Twitter
               </a>
               <a href="#" className="block text-gray-400 hover:text-white transition-colors">

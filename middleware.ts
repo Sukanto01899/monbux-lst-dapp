@@ -14,6 +14,9 @@ export function middleware(req: NextRequest) {
   if (hostname?.startsWith("api.")) {
     return NextResponse.rewrite(new URL(`/api${req.nextUrl.pathname}`, req.url));
   }
+  if (hostname?.startsWith("docs.")) {
+    return NextResponse.redirect("https://monbux.gitbook.io/docs");
+  }
   // Add more conditions for other subdomains
   return NextResponse.next();
 }

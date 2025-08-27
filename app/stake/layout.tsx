@@ -1,4 +1,5 @@
 import React from "react";
+import AppFooter from "~~/components/stake/footer/Footer";
 import AppHeader from "~~/components/stake/header/Header";
 
 const StakeLayout = ({ children }: { children: React.ReactNode }) => {
@@ -6,6 +7,7 @@ const StakeLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <AppHeader />
       {children}
+      <AppFooter />
     </>
   );
 };

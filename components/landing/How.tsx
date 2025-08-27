@@ -31,7 +31,7 @@ const How = () => {
             How It{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Works</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-content max-w-3xl mx-auto">
             Get started with liquid staking in just four simple steps
           </p>
         </div>

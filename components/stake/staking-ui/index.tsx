@@ -12,8 +12,8 @@ const StakeControl = () => {
     <div className="w-full flex flex-col justify-center items-center mt-24 gap-4">
       <SelectOption isStaking={isStaking} setIsStaking={setIsStaking} />
 
-      <div className="w-[400px] md:w-[500px] p-6 border-2 border-accent rounded-xl space-y-6 bg-base-100">
-        {isStaking ? <Staking isStaking={isStaking} /> : <Unstaking isStaking={isStaking}/>}
+      <div className="w-[360px] sm:w-[400px] md:w-[500px] p-6 border-2 border-accent rounded-xl space-y-6 bg-base-100">
+        {isStaking ? <Staking isStaking={isStaking} /> : <Unstaking isStaking={isStaking} />}
       </div>
 
       <ExchangeRate />

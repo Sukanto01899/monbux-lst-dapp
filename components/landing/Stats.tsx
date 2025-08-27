@@ -13,25 +13,25 @@ const Stats = ({
             <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
               {stats.totalStaked.toLocaleString()}
             </div>
-            <div className="text-gray-600">Total MON Staked</div>
+            <div className="text-neutral-content">Total MON Staked</div>
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">
               {stats.totalMinted.toLocaleString()}
             </div>
-            <div className="text-gray-600">Total mMON Minted</div>
+            <div className="text-neutral-content">Total mMON Minted</div>
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
               {stats.uniqueStakers.toLocaleString()}
             </div>
-            <div className="text-gray-600">Unique Stakers</div>
+            <div className="text-neutral-content">Unique Stakers</div>
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">
               {stats.transactions.toLocaleString()}
             </div>
-            <div className="text-gray-600">Total Transactions</div>
+            <div className="text-neutral-content">Total Transactions</div>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const Hero = () => {
           </div>
 
           <div className="animate-fade-in-up animation-delay-200">
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-neutral-content mb-8 max-w-3xl mx-auto">
               Featuring MEV-boosted yield powered by the fastest Block Engine in crypto
             </p>
           </div>
@@ -38,13 +38,13 @@ const Hero = () => {
           {/* Hero Illustration */}
           <div className="animate-fade-in-up animation-delay-600">
             <div className="relative max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8 shadow-2xl">
+              <div className="bg-gradient-to-br from-primary to-secondary rounded-3xl p-8 shadow-2xl">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                   <div className="flex flex-col items-center">
                     <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-4 shadow-lg">
                       <WalletIcon className="w-10 h-10 text-white" />
                     </div>
-                    <span className="text-lg font-semibold text-gray-700">MON Tokens</span>
+                    <span className="text-lg font-semibold text-neutral-content">MON Tokens</span>
                   </div>
 
                   <div className="flex items-center">
@@ -55,7 +55,7 @@ const Hero = () => {
                     <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mb-4 shadow-lg">
                       <StarIcon className="w-10 h-10 text-white" />
                     </div>
-                    <span className="text-lg font-semibold text-gray-700">mMON</span>
+                    <span className="text-lg font-semibold text-neutral-content">mMON</span>
                   </div>
                 </div>
               </div>

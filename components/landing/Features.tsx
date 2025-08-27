@@ -38,7 +38,7 @@ const Features = () => {
             Why Choose{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Monbux</span>?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-content max-w-3xl mx-auto">
             Experience the next generation of liquid staking with our secure and user-friendly platform
           </p>
         </div>
