@@ -1,17 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  ArrowRight,
-  BarChart3,
-  ChevronDown,
-  Menu,
-  Shield,
-  Star,
-  TrendingUp,
-  Users,
-  Wallet,
-  X,
-  Zap,
-} from "lucide-react";
+import { ArrowRight, BarChart3, Menu, Shield, Star, TrendingUp, Wallet, X, Zap } from "lucide-react";
 
 const MonbuxLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
