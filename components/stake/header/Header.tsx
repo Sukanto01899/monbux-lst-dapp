@@ -10,7 +10,7 @@ const menus = [
   { name: "Stake", href: "https://stake.monbux.xyz", live: true },
   { name: "Swap", href: "#swap", live: false },
   { name: "Point", href: "#point", live: false },
-  { name: "Documentation", href: "https://docs.monbux.xyx", live: false },
+  { name: "Documentation", href: "https://monbux.gitbook.io/docs", live: true },
   { name: "Faucet", href: "https://faucet.monad.xyz/", live: true },
 ];
 

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import CTA from "./CTA";
 import Faq from "./Faq";
@@ -7,9 +9,12 @@ import Header from "./Header";
 import Hero from "./Hero";
 import How from "./How";
 import Stats from "./Stats";
+import useStakingData from "~~/hooks/monbux/useStakingData";
+import { formatEther } from "viem";
 
 const MonbuxLanding = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { totalStakedMON, totalUniqueStakers } = useStakingData();
 
   // Stats animation
   const [stats, setStats] = useState({
@@ -20,9 +25,6 @@ const MonbuxLanding = () => {
   });
 
   const finalStats = {
-    totalStaked: 125847,
-    totalMinted: 119320,
-    uniqueStakers: 1247,
     transactions: 8394,
   };
 
@@ -45,9 +47,9 @@ const MonbuxLanding = () => {
         if (step <= steps) {
           const progress = step / steps;
           setStats({
-            totalStaked: Math.floor(finalStats.totalStaked * progress),
-            totalMinted: Math.floor(finalStats.totalMinted * progress),
-            uniqueStakers: Math.floor(finalStats.uniqueStakers * progress),
+            totalStaked: Math.floor(totalStakedMON ? parseInt(formatEther(totalStakedMON)) * progress : 0),
+            totalMinted: Math.floor(totalStakedMON ? parseInt(formatEther(totalStakedMON)) * progress : 0),
+            uniqueStakers: Math.floor(totalUniqueStakers ? parseInt(totalUniqueStakers.toString()) * progress : 0),
             transactions: Math.floor(finalStats.transactions * progress),
           });
           step++;
@@ -60,7 +62,7 @@ const MonbuxLanding = () => {
     // Trigger animation when component mounts
     const timer = setTimeout(animateStats, 1000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [totalStakedMON, totalUniqueStakers]);
 
   return (
     <div className="min-h-screen bg-white">

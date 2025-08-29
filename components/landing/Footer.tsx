@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-base-300 text-white py-12">
+    <footer className="bg-base-300 text-neutral-content py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
@@ -28,7 +28,10 @@ const Footer = () => {
               <a href="#" className="block text-gray-400 hover:text-white transition-colors">
                 GitHub
               </a>
-              <a href="https://docs.monbux.xyz/" className="block text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://monbux.gitbook.io/docs"
+                className="block text-gray-400 hover:text-white transition-colors"
+              >
                 Docs
               </a>
             </div>

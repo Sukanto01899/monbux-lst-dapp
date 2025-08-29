@@ -63,7 +63,7 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              {["Home", "Features", "How it Works", "Dashboard", "FAQ", "Contact"].map(item => (
+              {["Home", "Features", "How it Works", "FAQ"].map(item => (
                 <button
                   key={item}
                   onClick={() => setIsMenuOpen(false)}
