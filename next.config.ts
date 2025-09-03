@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: process.env.NEXT_PUBLIC_IGNORE_BUILD_ERROR === "true",
   },
   images: {
-    domains: ["monbux.xyz"],
+    domains: ["monbux.xyz", "www.monbux.xyz", "imagedelivery.net", "fast.image.delivery"],
   },
   eslint: {
     ignoreDuringBuilds: process.env.NEXT_PUBLIC_IGNORE_BUILD_ERROR === "true",

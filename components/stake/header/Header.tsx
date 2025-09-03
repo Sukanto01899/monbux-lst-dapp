@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
-import { notification } from "~~/utils/scaffold-eth";
 
 const menus = [
-  { name: "Stake", href: "https://stake.monbux.xyz", live: true },
-  { name: "Swap", href: "#swap", live: false },
-  { name: "Point", href: "#point", live: false },
+  { name: "Stake", href: "/stake", live: true },
+  { name: "Swap", href: "/swap", live: true },
+  { name: "NFT", href: "/nft/pioneer", live: true },
   { name: "Documentation", href: "https://monbux.gitbook.io/docs", live: true },
   { name: "Faucet", href: "https://faucet.monad.xyz/", live: true },
 ];
@@ -25,13 +25,6 @@ const AppHeader = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const menuClickHandler = (menu: { name: string; href: string; live: boolean }) => {
-    if (!menu.live) return notification.info("Coming Soon!");
-
-    window.open(menu.href, "_blank");
-  };
-
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-base-300 backdrop-blur-lg shadow-lg" : "bg-transparent"}`}
@@ -49,13 +42,13 @@ const AppHeader = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {menus.map(item => (
-                <button
+                <Link
                   key={item.name}
-                  onClick={() => menuClickHandler(item)}
+                  href={item.href}
                   className="text-neutral-content cursor-pointer hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
                 >
                   {item.name}
-                </button>
+                </Link>
               ))}
             </div>
           </div>
@@ -80,13 +73,13 @@ const AppHeader = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-base-100 border-t">
               {menus.map(item => (
-                <button
+                <Link
                   key={item.name}
-                  onClick={() => menuClickHandler(item)}
+                  href={item.href}
                   className="text-neutral-content cursor-pointer hover:text-blue-600 block px-3 py-2 text-base font-medium"
                 >
                   {item.name}
-                </button>
+                </Link>
               ))}
 
               <div className="flex justify-center items-center space-x-4  w-full">
