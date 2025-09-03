@@ -53,7 +53,7 @@ const FormToken = ({ fromAmount, setFromAmount, fromToken, setFromToken, tokens 
           <TokenSelector tokens={tokens} token={selectedTokenData!} onSelect={setFromToken} label="From" />
         </div>
       </div>
-      <div className="space-x-2">
+      <div className="space-x-2 mt-2">
         {AUTO_BALANCE_SET.map(s => (
           <button
             key={s.label}

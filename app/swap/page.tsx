@@ -1,16 +1,12 @@
 import React from "react";
 import { NextPage } from "next";
-import AppFooter from "~~/components/stake/footer/Footer";
-import AppHeader from "~~/components/stake/header/Header";
 import SwapComponent from "~~/components/swap/Swap";
 
 const SwapPage: NextPage = () => {
   return (
-    <>
-      <AppHeader />
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black p-6 mt-16">
       <SwapComponent />
-      <AppFooter />
-    </>
+    </div>
   );
 };
 

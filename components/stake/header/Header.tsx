@@ -31,12 +31,12 @@ const AppHeader = () => {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <a href="https://monbux.xyz" className="flex items-center gap-1">
+          <Link href="/" className="flex items-center gap-1">
             <Image src="https://monbux.xyz/monbux-logo.png" alt="Monbux Logo" width={40} height={40} />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Monbux
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">

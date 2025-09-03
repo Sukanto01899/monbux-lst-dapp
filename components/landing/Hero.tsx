@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ArrowRightIcon, StarIcon, WalletIcon } from "@heroicons/react/24/outline";
 
 const Hero = () => {
@@ -21,18 +22,18 @@ const Hero = () => {
           </div>
 
           <div className="animate-fade-in-up animation-delay-400 flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <a
-              href="https://stake.monbux.xyz"
+            <Link
+              href="/stake"
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
             >
               Stake Now <ArrowRightIcon className="w-5 h-5" />
-            </a>
-            <a
-              href=""
+            </Link>
+            <Link
+              href="/swap"
               className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300"
             >
-              Learn More
-            </a>
+              Trade now
+            </Link>
           </div>
 
           {/* Hero Illustration */}
