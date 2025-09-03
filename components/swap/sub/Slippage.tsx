@@ -9,14 +9,14 @@ type SlippageProps = {
 const Slippage = ({ setSlippage, slippage }: SlippageProps) => {
   return (
     <div className="bg-gray-900 rounded-xl p-4 mb-6 border border-gray-600">
-      <div className="flex items-center justify-between">
-        <span className="text-white font-medium">Slippage</span>
-        <div className="flex space-x-2">
+      <div className="flex items-center justify-between gap-2">
+        <span className="text-white text-sm lg:text-md font-medium">Slippage</span>
+        <div className="flex flex-wrap space-x-2">
           {SLIPPAGE_OPTIONS.map(s => (
             <button
               key={s.label}
               onClick={() => setSlippage(s.value)}
-              className={`px-3 py-1 rounded-lg text-sm transition-colors ${
+              className={`px-1 lg:px-3 py-1 rounded-lg text-sm transition-colors ${
                 slippage === s.value ? "bg-purple-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"
               }`}
             >

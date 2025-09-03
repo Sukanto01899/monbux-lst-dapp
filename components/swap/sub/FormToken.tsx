@@ -34,7 +34,7 @@ const FormToken = ({ fromAmount, setFromAmount, fromToken, setFromToken, tokens 
   };
 
   return (
-    <div className="bg-gray-900 rounded-2xl p-4 mb-2">
+    <div className="bg-gray-900 rounded-2xl py-4 px-4 lg:px-6 mb-2">
       <div className="flex justify-between items-center mb-4">
         <span className="text-gray-400">From</span>
         <span className="text-gray-400 text-sm">

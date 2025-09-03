@@ -27,7 +27,7 @@ const ToToken = ({ toAmount, setToAmount, toToken, setToToken, tokens, isPriceLo
   };
 
   return (
-    <div className="bg-gray-900 rounded-2xl py-4 px-6 mb-6">
+    <div className="bg-gray-900 rounded-2xl py-4 px-4 lg:px-6 mb-6">
       <div className="flex justify-between items-center mb-4">
         <span className="text-gray-400">To</span>
         <span className="text-gray-400 text-sm">

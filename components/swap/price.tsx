@@ -190,7 +190,7 @@ export default function PriceView({ taker, setPrice, setFinalize, chainId }: Pri
     <div className="max-w-6xl mx-auto relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-          <div className="bg-gray-800/50 backdrop-blur-xl rounded-3xl overflow-hidden p-8 border border-gray-700/50 shadow-2xl">
+          <div className="bg-gray-800/50 backdrop-blur-xl rounded-3xl overflow-hidden p-4 lg:p-8 border border-gray-700/50 shadow-2xl">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white flex items-center">
                 <PowerIcon className="w-8 h-8 text-purple-400 mr-2" />
