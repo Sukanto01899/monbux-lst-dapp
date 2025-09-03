@@ -1,5 +1,5 @@
+import { EIP712TypedData } from "../monbux/signature";
 import { Address, type Hex } from "viem";
-import { EIP712TypedData } from "@/utils/signature";
 
 // This interface is subject to change as the API V2 endpoints aren't finalized.
 export interface PriceResponse {
