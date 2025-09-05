@@ -4,7 +4,7 @@ import { ArrowRightIcon, StarIcon, WalletIcon } from "@heroicons/react/24/outlin
 
 const Hero = () => {
   return (
-    <section className="pt-16 bg-gradient-to-br from-base-200 via-base-100 to-base-200 overflow-hidden">
+    <section id="home" className="pt-16 bg-gradient-to-br from-base-200 via-base-100 to-base-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           <div className="animate-fade-in-up">

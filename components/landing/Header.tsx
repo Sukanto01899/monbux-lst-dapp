@@ -22,10 +22,10 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {["Home", "Features", "How it Works", "FAQ"].map(item => (
+              {["Home", "Features", "How it works", "FAQ"].map(item => (
                 <a
                   key={item}
-                  href={`#${item.toLowerCase().replace(" ", "-")}`}
+                  href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
                   className="text-neutral-content hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
                 >
                   {item}
@@ -45,9 +45,12 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <Link href="/swap" className="text-gray-700 hover:text-blue-600 focus:outline-none">
+            <button
+              onClick={() => setIsMenuOpen(true)}
+              className="text-gray-700 hover:text-blue-600 focus:outline-none"
+            >
               {isMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
-            </Link>
+            </button>
           </div>
         </div>
 
