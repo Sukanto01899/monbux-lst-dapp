@@ -61,7 +61,7 @@ const AppHeader = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 cursor-pointer hover:text-blue-600 focus:outline-none"
+              className="text-neutral-content cursor-pointer hover:text-blue-600 focus:outline-none"
             >
               {isMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
             </button>

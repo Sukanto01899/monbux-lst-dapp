@@ -46,8 +46,8 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsMenuOpen(true)}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              onClick={() => setIsMenuOpen(prev => !prev)}
+              className="text-neutral-content hover:text-blue-600 focus:outline-none"
             >
               {isMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
             </button>
@@ -59,13 +59,13 @@ const Header = ({ scrolled }: { scrolled: boolean }) => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               {["Home", "Features", "How it Works", "FAQ"].map(item => (
-                <button
+                <a
                   key={item}
-                  onClick={() => setIsMenuOpen(false)}
+                  href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
                   className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium"
                 >
                   {item}
-                </button>
+                </a>
               ))}
               <Link
                 href="/swap"
