@@ -172,9 +172,9 @@ const AllPasteBatchEthSender = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black p-4 lg:p-6 mt-16">
       <div className="w-full max-w-6xl mx-auto">
-        <div className="bg-gray-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/20">
+        <div className="bg-gray-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-2 sm:p-4 md:p-8 border border-white/20">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-white mb-2">Batch MON Sender</h1>
+            <h1 className="text-4xl font-bold text-white mb-2">Batch Sender</h1>
             <p className="text-blue-200">Send MON to multiple addresses in one transaction using Monbux</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -187,7 +187,7 @@ const AllPasteBatchEthSender = () => {
 
             <div>
               {/* Transaction Summary */}
-              <div className="mb-6 p-6 bg-white/5 rounded-xl border border-white/10">
+              <div className="mb-6 p-2 sm:p-4 lg:p-6 bg-white/5 rounded-xl border border-white/10">
                 <div className="flex items-center justify-between text-white">
                   <span className="font-semibold">Total Amount:</span>
                   <span className="text-2xl font-bold text-purple-400">{getTotalAmount().toFixed(4)} MON</span>

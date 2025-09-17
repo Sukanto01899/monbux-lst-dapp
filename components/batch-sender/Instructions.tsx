@@ -2,7 +2,7 @@ import React from "react";
 
 const Instructions = () => {
   return (
-    <div className="mt-8 p-6 bg-blue-900/20 rounded-xl border border-blue-500/30">
+    <div className="mt-8 p-2 sm:p-4 lg:p-6 bg-blue-900/20 rounded-xl border border-blue-500/30">
       <h3 className="text-blue-400 font-semibold mb-3">📋 How to Use:</h3>
       <ol className="text-blue-200 space-y-2 text-sm">
         <li>1. Paste recipients in format: address, amount (one per line)</li>
