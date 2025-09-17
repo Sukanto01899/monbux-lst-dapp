@@ -7,7 +7,7 @@ type SelectOptionProps = {
 
 const SelectOption: React.FC<SelectOptionProps> = ({ setIsStaking, isStaking }) => {
   return (
-    <div className="w-[360px] sm:w-[400px] md:w-[500px] bg-base-100 items-center border-2 p-2  border-accent rounded-xl overflow-hidden">
+    <div className="w-[360px] sm:w-[400px] md:w-[500px] bg-base-100 items-center border border-gray-700/50 shadow-2xl p-2  rounded-xl overflow-hidden">
       <div className="flex  justify-between relative w-full h-full rounded-xl overflow-hidden">
         <OptionBtn isStaking={isStaking} onClick={() => setIsStaking(true)}>
           Stake

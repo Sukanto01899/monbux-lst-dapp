@@ -41,7 +41,7 @@ export const useTransactor = (_walletClient?: WalletClient): TransactionFunc => 
 
   const result: TransactionFunc = async (tx, options) => {
     if (!walletClient) {
-      notification.error("Cannot access account");
+      notification.error("Cannot access account, reconnect please ");
       console.error("⚡️ ~ file: useTransactor.tsx ~ error");
       return;
     }

@@ -9,9 +9,9 @@ import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 const menus = [
   { name: "Stake", href: "/stake", live: true },
   { name: "Swap", href: "/swap", live: true },
+  { name: "Batch Send", href: "/batch-send", live: true },
   { name: "NFT", href: "/nft/pioneer", live: true },
-  { name: "Documentation", href: "https://monbux.gitbook.io/docs", live: true },
-  { name: "Faucet", href: "https://faucet.monad.xyz/", live: true },
+  { name: "Docs", href: "https://monbux.gitbook.io/docs", live: true },
 ];
 
 const AppHeader = () => {

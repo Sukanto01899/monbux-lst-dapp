@@ -76,7 +76,7 @@ export default function QuoteView({
     return (
       <div className="text-gray-900 dark:text-white flex flex-col items-center py-6">
         <p>Getting best quote...</p>
-        <ArrowPathIcon className="w-14 h-14 animate-spin"/>
+        <ArrowPathIcon className="w-14 h-14 animate-spin" />
       </div>
     );
   }
