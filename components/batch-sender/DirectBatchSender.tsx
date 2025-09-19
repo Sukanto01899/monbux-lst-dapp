@@ -170,12 +170,13 @@ const AllPasteBatchEthSender = () => {
   //   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black p-4 lg:p-6 mt-16">
+    <div className="min-h-screen  p-4 lg:p-6 mt-16">
       <div className="w-full max-w-6xl mx-auto">
-        <div className="bg-gray-800/50 backdrop-blur-xl rounded-2xl shadow-2xl p-2 sm:p-4 md:p-8 border border-white/20">
+        <div className="base-bg rounded-2xl p-2 sm:p-4 md:p-8 base-border">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-white mb-2">Batch Sender</h1>
-            <p className="text-blue-200">Send MON to multiple addresses in one transaction using Monbux</p>
+            <p className="text-neutral-content text-lg">
+              Send MON to multiple addresses in one transaction using Monbux
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {/* Recipients Input */}

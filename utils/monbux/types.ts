@@ -1,6 +1,13 @@
 import { EIP712TypedData } from "../monbux/signature";
 import { Address, type Hex } from "viem";
 
+interface FillsObject {
+  from: string;
+  proportionBps: string;
+  to: string;
+  source: string;
+}
+
 // This interface is subject to change as the API V2 endpoints aren't finalized.
 export interface PriceResponse {
   sellToken: string;
@@ -10,7 +17,9 @@ export interface PriceResponse {
   grossSellAmount: string;
   grossBuyAmount: string;
   allowanceTarget: Address;
-  route: [];
+  route: {
+    fills: FillsObject[];
+  };
   fees: {
     integratorFee: {
       amount: string;
@@ -30,6 +39,8 @@ export interface PriceResponse {
   auxiliaryChainData?: {
     l1GasEstimate?: number;
   };
+  totalNetworkFee: string;
+  liquidityAvailable: boolean;
 }
 
 // This interface is subject to change as the API V2 endpoints aren't finalized.

@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { CheckCircleIcon } from "@heroicons/react/20/solid";
-import { UsersIcon } from "@heroicons/react/24/outline";
+
+// import { CheckCircleIcon } from "@heroicons/react/20/solid";
+// import { UsersIcon } from "@heroicons/react/24/outline";
 
 // type NftPreviewProps = {
 //   nftData: any;
@@ -15,7 +16,7 @@ const NFTPreview = () => {
       <div className="relative group">
         <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
         <div className="relative bg-gray-900 rounded-2xl p-8 border border-gray-800">
-          <div className="aspect-square bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl mb-6 relative overflow-hidden">
+          <div className="aspect-square bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl relative overflow-hidden">
             {/* NFT Preview Image */}
             <Image src="/pioneer.jpg" alt="NFT Preview" layout="fill" objectFit="cover" />
             <div className="absolute bottom-4 left-4 right-4">
@@ -27,7 +28,7 @@ const NFTPreview = () => {
           </div>
 
           {/* NFT Details */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <div>
               <h2 className="text-2xl font-bold text-white mb-2">MonBux Pioneer NFT</h2>
               <p className="text-gray-400 text-sm leading-relaxed">
@@ -46,7 +47,7 @@ const NFTPreview = () => {
                 <span>Non-transferable</span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

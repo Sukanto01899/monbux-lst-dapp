@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { ExtendedPriceResponse, QuoteResponse } from "../../utils/monbux/types";
 import PriceView from "./price";
 import QuoteView from "./quote";
+// import TokenModal from "./sub/TokenModal";
 import { useAccount, useChainId } from "wagmi";
+
+export const SwapContext = createContext({});
 
 export default function SwapComponent() {
   const { address } = useAccount();
@@ -21,7 +24,7 @@ export default function SwapComponent() {
   };
 
   return (
-    <>
+    <SwapContext.Provider value="">
       <PriceView taker={address} price={price} setPrice={setPrice} setFinalize={setFinalize} chainId={chainId} />
 
       {/* Modal Overlay */}
@@ -57,6 +60,6 @@ export default function SwapComponent() {
           </div>
         </div>
       )}
-    </>
+    </SwapContext.Provider>
   );
 }

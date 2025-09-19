@@ -19,7 +19,7 @@ const MintNFT = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center p-4 mt-16">
+    <div className="min-h-screen  flex items-center justify-center p-4 mt-16">
       <div className="w-full max-w-6xl mx-auto">
         {isError || isErrorNftData ? <div>Error here, Please refresh this page.</div> : null}
         {isLoading || isLoadingNftData ? (

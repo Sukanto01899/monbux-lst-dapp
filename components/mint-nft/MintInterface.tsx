@@ -43,7 +43,7 @@ const MintInterface = ({ nftData }: MintInterfaceProps) => {
 
   return (
     <div className="order-1 lg:order-2">
-      <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 backdrop-blur-sm">
+      <div className="base-bg rounded-2xl p-8 base-border">
         {/* Collection Stats */}
         <div className="mb-8">
           <CollectionStats isActive={nftData?.isActive} />

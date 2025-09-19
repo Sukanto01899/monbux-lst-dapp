@@ -16,6 +16,7 @@ const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
         </ThemeProvider>
 
         <Analytics />
+        <div id="modal-root"></div>
       </body>
     </html>
   );

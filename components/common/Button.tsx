@@ -4,7 +4,7 @@ const Button = ({ children, ...rest }: React.ButtonHTMLAttributes<HTMLButtonElem
   return (
     <button
       {...rest}
-      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] disabled:hover:scale-100"
+      className="btn btn-xl w-full  text-neutral-content font-semibold py-4 px-6 rounded-xl   transition-all duration-200 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] disabled:hover:scale-100"
     >
       {children}
     </button>

@@ -8,9 +8,7 @@
 }
 
 @plugin "daisyui" {
-  themes:
-    light,
-    dark --prefersdark;
+  themes: dark --default;
 }
 
 @plugin "daisyui/theme" {
@@ -128,4 +126,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield; /* For Firefox */
+}
+
+.base-border {
+  @apply border border-gray-700/50 shadow-2xl;
+}
+.base-bg {
+  @apply bg-gray-800/50 backdrop-blur-xl;
 }

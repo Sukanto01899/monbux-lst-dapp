@@ -27,7 +27,7 @@ const ToToken = ({ toAmount, setToAmount, toToken, setToToken, tokens, isPriceLo
   };
 
   return (
-    <div className="bg-gray-900 rounded-2xl py-4 px-4 lg:px-6 mb-6">
+    <div className="bg-gray-900 rounded-b-2xl py-4 px-4 lg:px-6 mb-6">
       <div className="flex justify-between items-center mb-4">
         <span className="text-gray-400">To</span>
         <span className="text-gray-400 text-sm">
@@ -44,7 +44,13 @@ const ToToken = ({ toAmount, setToAmount, toToken, setToToken, tokens, isPriceLo
           className={`${isPriceLoading && "animate-pulse"} cursor-not-allowed  bg-transparent  text-2xl sm:text-3xl text-white placeholder-gray-500 outline-none flex-1 mr-2 min-w-0`}
         />
         <div className="flex-shrink-0">
-          <TokenSelector tokens={tokens} token={selectedTokenData!} onSelect={setToToken} label="To" />
+          <TokenSelector
+            modal="to_selector"
+            tokens={tokens}
+            token={selectedTokenData!}
+            onSelect={setToToken}
+            label="To"
+          />
         </div>
       </div>
       <div className="text-gray-400 text-sm mt-2">

@@ -10,7 +10,7 @@ const ProgressBar = ({ totalMinted, maxSupply }: { totalMinted: number; maxSuppl
           {totalMinted}/{maxSupply}
         </span>
       </div>
-      <div className="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
+      <div className="w-full bg-base-300 rounded-full h-3 overflow-hidden">
         <div
           className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-all duration-500 ease-out"
           style={{ width: `${progress}%` }}

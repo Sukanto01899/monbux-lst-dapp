@@ -21,7 +21,7 @@ interface ApproveButtonProps {
   onClick: () => void;
   sellTokenAddress: Address;
   disabled?: boolean;
-  price: ExtendedPriceResponse | null;
+  price: ExtendedPriceResponse | undefined;
   hasValidAmount?: boolean;
   insufficientBalance?: boolean;
 }
@@ -90,11 +90,7 @@ const SwapButton = ({
             {(() => {
               if (!connected) {
                 return (
-                  <button
-                    className="btn btn-primary btn-xl text-white text-xl font-bold py-3 px-4 rounded-xl w-full"
-                    onClick={openConnectModal}
-                    type="button"
-                  >
+                  <button className="btn btn-xl rounded-xl w-full" onClick={openConnectModal} type="button">
                     Connect Wallet
                   </button>
                 );

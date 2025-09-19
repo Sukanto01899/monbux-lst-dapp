@@ -15,11 +15,6 @@ type RecipientsInputProps = {
 const RecipientsInput = ({ recipientsText, handleRecipientsChange, parsedRecipients }: RecipientsInputProps) => {
   return (
     <div className="mb-6 space-y-4">
-      <div className="flex items-center justify-between">
-        <h2 className="text-lg md:text-2xl font-bold text-white">Recipients</h2>
-        <div className="hidden md:block text-sm text-blue-300">Format: address, amount (one per line)</div>
-      </div>
-
       <div className="p-2 md:p-6 bg-white/5 rounded-xl border border-white/10">
         <label className="block text-white mb-2 font-semibold">Paste Recipients (address, amount per line)</label>
         <textarea

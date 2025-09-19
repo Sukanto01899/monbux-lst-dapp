@@ -4,7 +4,7 @@ export const PERMIT2_ADDRESS = "0x000000000022D473030F116dDEE9F6B43aC78BA3";
 
 export const MAGIC_CALLDATA_STRING = "f".repeat(130); // used when signing the eip712 message
 
-export const AFFILIATE_FEE = 50; // 0.5% affiliate fee. Denoted in Bps.
+export const AFFILIATE_FEE = 0; // 0.5% affiliate fee. Denoted in Bps.
 export const FEE_RECIPIENT = "0x78df57AB583F80737e7836247E80FFC1487f6CdF"; // The ETH address that should receive affiliate fees
 
 export const MAX_ALLOWANCE = BigInt("115792089237316195423570985008687907853269984665640564039457584007913129639935");
@@ -321,5 +321,5 @@ export const MONAD_TESTNET_TOKENS_BY_ADDRESS: Record<string, Token> = {
     decimals: 18,
     address: "0x4791Ccff46F419300d11adf07Ba72BB3BCC51743",
     logoURI: "https://www.monbux.xyz/monbux-logo.png",
-  }
+  },
 };

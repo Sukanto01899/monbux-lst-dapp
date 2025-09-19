@@ -198,10 +198,7 @@ export default function QuoteView({
         </Button>
 
         {onClose && (
-          <button
-            onClick={onClose}
-            className="w-full py-2 px-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors border border-gray-300 dark:border-gray-600 rounded"
-          >
+          <button onClick={onClose} className="w-full py-2 px-4 rounded-xl base-border text-red-500">
             Cancel
           </button>
         )}
@@ -224,7 +221,7 @@ export default function QuoteView({
         </div>
       )}
       {error && (
-        <div className="text-red-600 dark:text-red-400 mt-4">
+        <div className="text-red-600 dark:text-red-400 mt-4 text-center">
           Error: {(error as BaseError).shortMessage || error.message}
         </div>
       )}

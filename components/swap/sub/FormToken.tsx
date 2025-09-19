@@ -34,7 +34,7 @@ const FormToken = ({ fromAmount, setFromAmount, fromToken, setFromToken, tokens 
   };
 
   return (
-    <div className="bg-gray-900 rounded-2xl py-4 px-4 lg:px-6 mb-2">
+    <div className="bg-gray-900 rounded-t-2xl py-8 lg:py-4 px-4 lg:px-6">
       <div className="flex justify-between items-center mb-4">
         <span className="text-gray-400">From</span>
         <span className="text-gray-400 text-sm">
@@ -50,7 +50,13 @@ const FormToken = ({ fromAmount, setFromAmount, fromToken, setFromToken, tokens 
           className="bg-transparent text-2xl sm:text-3xl text-white placeholder-gray-500 outline-none flex-1 mr-2 min-w-0"
         />
         <div className="flex-shrink-0">
-          <TokenSelector tokens={tokens} token={selectedTokenData!} onSelect={setFromToken} label="From" />
+          <TokenSelector
+            modal="from_selector"
+            tokens={tokens}
+            token={selectedTokenData!}
+            onSelect={setFromToken}
+            label="From"
+          />
         </div>
       </div>
       <div className="space-x-2 mt-2">

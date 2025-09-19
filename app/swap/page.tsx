@@ -4,7 +4,7 @@ import SwapComponent from "~~/components/swap/Swap";
 
 const SwapPage: NextPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black p-4 lg:p-6 mt-16">
+    <div className="min-h-screen p-4 lg:p-6 mt-16">
       <SwapComponent />
     </div>
   );

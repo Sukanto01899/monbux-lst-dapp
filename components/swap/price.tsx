@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback, useEffect, useMemo, useState } from "react";
 // import TokenSelector from "./TokenSelector";
-import { usePriceFetcher } from "../0x/usePriceFetcher";
+// import { usePriceFetcher } from "../0x/usePriceFetcher";
+import usePriceQuery from "../0x/usePriceQuery";
 import {
   AFFILIATE_FEE,
   FEE_RECIPIENT,
@@ -9,15 +10,16 @@ import {
   MONAD_TESTNET_TOKENS,
   MONAD_TESTNET_TOKENS_BY_SYMBOL,
 } from "../../utils/monbux/constants";
-import { ExtendedPriceResponse, PriceRequest, TradeDirection } from "../../utils/monbux/types";
+import { ExtendedPriceResponse, PriceRequest, TradeDirection, ValidationError } from "../../utils/monbux/types";
 import SwapButton from "../swap/SwapButton";
 import FormToken from "../swap/sub/FormToken";
 import MiddleSwapBtn from "../swap/sub/MiddleSwapBtn";
 import Portfolio from "../swap/sub/Portfolio";
-import QuickStats from "../swap/sub/QuickStats";
+// import QuickStats from "../swap/sub/QuickStats";
 import Slippage from "../swap/sub/Slippage";
 import ToToken from "../swap/sub/ToToken";
 import TopTokens from "../swap/sub/TopTokens";
+import BestRoute from "./sub/BestRoute";
 // import { usePrivy, useWallets } from "@privy-io/react-auth";
 // import { useSetActiveWallet } from "@privy-io/wagmi";
 import { Address, formatUnits, parseUnits } from "viem";
@@ -41,6 +43,7 @@ export default function PriceView({ taker, setPrice, setFinalize, chainId }: Pri
   const [showSettings, setShowSettings] = useState(false);
   const [tradeDirection, setTradeDirection] = useState<TradeDirection>("sell");
   const [previousTokenPair, setPreviousTokenPair] = useState(`${sellToken}-${buyToken}`);
+  const [validationErrors, setValidationErrors] = useState<ValidationError[]>([]);
   // const [buyTokenTax, setBuyTokenTax] = useState<TokenTax>({
   //   buyTaxBps: "0",
   //   sellTaxBps: "0",
@@ -132,18 +135,32 @@ export default function PriceView({ taker, setPrice, setFinalize, chainId }: Pri
     [chainId, sellTokenObject.address, buyTokenObject.address, parsedSellAmount, parsedBuyAmount, taker, slippage],
   );
 
+  // const {
+  //   price: fetchedPrice,
+  //   isLoading: isPriceLoading,
+  //   error: priceError,
+  //   validationErrors,
+  // } = usePriceFetcher({
+  //   enabled: sellAmount !== "" && parseFloat(sellAmount) >= parseFloat(MIN_TRADE_AMOUNT),
+  //   request: priceRequest,
+  // });
+
   const {
-    price: fetchedPrice,
+    data: fetchedPrice,
     isLoading: isPriceLoading,
     error: priceError,
-    validationErrors,
-  } = usePriceFetcher({
-    enabled: sellAmount !== "" && parseFloat(sellAmount) >= parseFloat(MIN_TRADE_AMOUNT),
-    request: priceRequest,
-  });
+    isFetching: priceFetching,
+  } = usePriceQuery(priceRequest, sellAmount !== "" && parseFloat(sellAmount) >= parseFloat(MIN_TRADE_AMOUNT));
+
+  useEffect(() => {
+    if (fetchedPrice && fetchedPrice.validationErrors && fetchedPrice.validationErrors.length > 0) {
+      setValidationErrors(fetchedPrice.validationErrors);
+    }
+  }, [fetchedPrice]);
 
   useEffect(() => {
     if (!fetchedPrice || isPriceLoading) return;
+    console.log(fetchedPrice);
 
     if (sellAmount === "" || parseFloat(sellAmount) <= 0) {
       setBuyAmount("");
@@ -170,7 +187,7 @@ export default function PriceView({ taker, setPrice, setFinalize, chainId }: Pri
 
   const { data: sellTokenBalance } = useBalance({
     address: taker,
-    token: sellTokenObject.address,
+    token: sellTokenObject.symbol === "MON" ? undefined : sellTokenObject.address,
   });
 
   const insufficientBalance = useMemo(() => {
@@ -190,7 +207,7 @@ export default function PriceView({ taker, setPrice, setFinalize, chainId }: Pri
     <div className="max-w-6xl mx-auto relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-          <div className="bg-gray-800/50 backdrop-blur-xl rounded-3xl overflow-hidden p-4 lg:p-8 border border-gray-700/50 shadow-2xl">
+          <div className="base-bg rounded-3xl overflow-hidden p-4 lg:p-8 border border-gray-700/50 shadow-2xl">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white flex items-center">
                 <PowerIcon className="w-8 h-8 text-purple-400 mr-2" />
@@ -209,7 +226,7 @@ export default function PriceView({ taker, setPrice, setFinalize, chainId }: Pri
             {priceError && (
               <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-lg p-2 mb-2">
                 <p className="text-red-800 dark:text-red-200 font-medium">Error fetching price:</p>
-                <p className="text-red-700 dark:text-red-300 text-sm">{priceError}</p>
+                <p className="text-red-700 dark:text-red-300 text-sm">{priceError.message}</p>
               </div>
             )}
 
@@ -224,7 +241,7 @@ export default function PriceView({ taker, setPrice, setFinalize, chainId }: Pri
               </div>
             )}
 
-            <div className="space-y-4 mb-6">
+            <div className="mb-6">
               {/* Selling token selector */}
               <FormToken
                 fromAmount={sellAmount}
@@ -251,12 +268,18 @@ export default function PriceView({ taker, setPrice, setFinalize, chainId }: Pri
                 toToken={buyToken}
                 setToToken={handleBuyTokenChange}
                 tokens={MONAD_TESTNET_TOKENS}
-                isPriceLoading={isPriceLoading}
+                isPriceLoading={isPriceLoading || priceFetching}
               />
+
+              {fetchedPrice && sellAmount && fetchedPrice?.liquidityAvailable ? (
+                <BestRoute priceDetails={fetchedPrice} buyTokenObject={buyTokenObject} slippage={slippage} />
+              ) : (
+                ""
+              )}
             </div>
 
             {isPriceLoading && sellAmount && (
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 mb-6 space-y-2">
+              <div className="bg-base-100 rounded-2xl p-4 mb-6 space-y-2 animate-pulse">
                 <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
                   <div className="animate-spin h-4 w-4 border-2 border-blue-500 border-t-transparent rounded-full"></div>
                   <span className="text-sm">Fetching latest price...</span>
@@ -273,6 +296,13 @@ export default function PriceView({ taker, setPrice, setFinalize, chainId }: Pri
                   )}{" "}
                   {buyTokenObject.symbol}
                 </div>
+              </div>
+            )}
+
+            {/* NO liquidity available */}
+            {fetchedPrice && !isPriceLoading && sellAmount && fetchedPrice?.liquidityAvailable === false && (
+              <div className="bg-base-100 rounded-2xl p-4 mb-6 space-y-2 ">
+                <span className="text-sm text-orange-400">No liquidity found!</span>
               </div>
             )}
 
@@ -298,7 +328,7 @@ export default function PriceView({ taker, setPrice, setFinalize, chainId }: Pri
           <TopTokens />
 
           {/* Quick Stats */}
-          <QuickStats />
+          {/* <QuickStats /> */}
         </div>
       </div>
     </div>

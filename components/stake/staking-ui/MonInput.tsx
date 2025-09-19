@@ -73,7 +73,7 @@ const MonInput = ({
           Balance: <span className="font-bold">{getBalanceText()}</span>
         </p>
       </div>
-      <div className="h-14 w-full border-1 border-accent bg-base-300 rounded-xl overflow-hidden px-12 relative">
+      <div className="h-14 w-full bg-base-300 rounded-xl overflow-hidden px-12 relative">
         <Image
           className="absolute left-3 top-1/2 transform -translate-y-1/2"
           src={

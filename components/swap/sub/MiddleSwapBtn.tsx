@@ -27,7 +27,7 @@ const MiddleSwapBtn = ({
     setToAmount("");
   };
   return (
-    <div className="flex justify-center my-4">
+    <div className="flex justify-center -my-6">
       <button
         onClick={swapTokens}
         className="p-3 bg-gray-800 hover:bg-gray-700 rounded-full border border-gray-600 hover:border-purple-500 transition-all duration-200 group"
