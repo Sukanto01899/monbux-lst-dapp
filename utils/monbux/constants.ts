@@ -11,7 +11,7 @@ export const MAX_ALLOWANCE = BigInt("1157920892373161954235709850086879078532699
 
 // UI Constants
 export const DEBOUNCE_DELAY = 500; // ms
-export const MIN_TRADE_AMOUNT = "0.001";
+export const MIN_TRADE_AMOUNT = "0.0000001";
 export const DEFAULT_SLIPPAGE = 0.01; // 1%
 export const SLIPPAGE_OPTIONS = [
   { label: "0.1%", value: 10 },

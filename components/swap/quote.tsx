@@ -59,9 +59,13 @@ export default function QuoteView({
     };
 
     async function main() {
-      const response = await fetch(`/api/swap/quote?${qs.stringify(params)}`);
-      const data = await response.json();
-      setQuote(data);
+      try {
+        const response = await fetch(`/api/swap/quote?${qs.stringify(params)}`);
+        const data = await response.json();
+        setQuote(data);
+      } catch (error) {
+        console.log(error);
+      }
     }
     main();
   }, [chainId, price.sellToken, price.buyToken, price.sellAmount, taker, setQuote]);
